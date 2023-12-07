@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+.stopBtn {
+  border: 1px solid #b3aeae
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.newBtn,
+.sendBtn,
+.textBtn {
+  background: #83ABF7;
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.newBtn:hover,
+.sendBtn:hover,
+.textBtn:hover {
+  background: #699af7
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.newBtn:disabled,
+.sendBtn:disabled {
+  background: white;
+  color: #d7d7d7;
+  cursor: default;
+}
+
+.headerRight {
+  display: flex
+}
+
+.messagesContainer {
+  border: 1px solid #ECE8E8;
+  margin: 10px
+}
+
+.messageInputWrapper {
+  margin: 10px;
+}
+
+.inputBox {
+  border: 1px solid #b3aeae
+}
+
+.videoBtn {
+  background: #9bbbf5
+}
+
+.strangerBox,
+.youBox {
+  margin-top: 12px;
+}
+
+.confirmBtn:hover {
+  color: blue;
+  /* border: 1px solid blue; */
+}
+
+.confirmBtn:disabled {
+  color: rgb(180, 179, 179);
+}
+
+.home {
+  width: 50%;
+  margin: 10px auto;
+  border: 1px solid #ECE8E8;
+}
+
+.homeBtnWrapper {
+  display: flex;
+}
+
+.termsBox {
+  width: 50%;
+}
+
+.homeImage {
+  height: 170px;
+  width: 400px;
+}
+
+.homeInput {
+  width: 350px;
+}
+
+@media (max-width:600px) {
+  .stopBtn {
+    border-top: 1px solid #b3aeae;
+    border-right: 1px solid #b3aeae;
+    border-bottom: none;
+    border-left: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .headerRight {
+    display: none
+  }
+
+  .rotatedText {
+    display: none;
+  }
+
+  .logoWrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .messagesContainer {
+    border: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #FFF7EE;
+  }
+
+  .sendBtn {
+    display: none;
+  }
+
+  .messageInputWrapper {
+    margin: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .inputBox {
+    border-top: 1px solid #E7E5E5;
+    border-left: 1px solid #E7E5E5;
+    border-right: none;
+    border-bottom: none;
+    outline: none;
+  }
+
+  .strangerWrapper {
+    display: flex;
+
+  }
+
+  .youWrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .strangerBox {
+    border: 1px solid #DE6969;
+    padding: 8px 6px;
+    border-radius: 8px;
+    background: linear-gradient(rgb(247, 206, 206) 5%, #DE6969 15%, white 25%);
+    margin-top: 0;
+  }
+
+  .youBox {
+    border: 1px solid #7F7ADE;
+    padding: 8px 6px;
+    border-radius: 8px;
+    background: linear-gradient(rgb(202, 202, 243) 5%, #7F7ADE 15%, white 25%);
+    margin-top: 0;
+  }
+
+  .messageBy {
+    display: none;
+  }
+
+  .loadingText {
+    text-align: center;
+  }
+
+  .connectedText {
+    text-align: center;
+  }
+
+  .disconnectText {
+    text-align: center;
+  }
+
+  .disconnectText2 {
+    justify-content: center;
+  }
+
+  .welcomeText {
+    text-align: center;
+  }
+
+  .startBtnSmall {
+    margin: 0 auto;
+  }
+
+  .home {
+    width: 90%;
+    margin: 0px auto;
+    border: none;
+  }
+
+  .homeBtnWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .termsBox {
+    width: 100%;
+  }
+
+  .homeImage {
+    height: 150px;
+    width: 300px;
+  }
+
+  .homeInputWrapper {
+    width: 300px;
   }
 }
