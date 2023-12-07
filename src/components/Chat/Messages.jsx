@@ -63,8 +63,8 @@ const Messages = () => {
 
             {messages.length === 0 && !isTyping && receiver && <p className='connectedText'>You’re now chatting with a random stranger. Say Stand WITH THE CHINESE PEOPLE AGAINST THE CCP!</p>}
             {messages.map((message, index) => (
-                <div className={message?.stranger ? "strangerWrapper" : "youWrapper"}>
-                    <div key={index} className={message?.stranger ? "strangerBox" : "youBox"} style={{ fontSize: "18px", marginBottom: "10px", display: "flex", gap: "5px" }}>
+                <div key={index} className={message?.stranger ? "strangerWrapper" : "youWrapper"}>
+                    <div className={message?.stranger ? "strangerBox" : "youBox"} style={{ fontSize: "18px", marginBottom: "10px", display: "flex", gap: "5px" }}>
                         <p className='messageBy' style={{ color: message?.stranger ? "red" : "blue", fontWeight: "bold" }}>
                             {message?.stranger ? "Stranger :" : "You :"}
                         </p>
