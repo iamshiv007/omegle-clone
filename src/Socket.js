@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { io } from 'socket.io-client';
 import { v4 as uuidv4 } from 'uuid';
 import { useChat } from './contextApi/ChatContext';
-// import beepSound from "./assets/ping-82822.mp3"
+import beepSound from "./assets/ping-82822.mp3"
 
-const URL = process.env.REACT_APP_BASE_URL
+const URL = "http://localhost:5000"
 
 export const socket = io(URL, {
     autoConnect: false,
@@ -68,9 +68,9 @@ const Socket = () => {
 
         socket.on("user-paired", (receiver) => {
             setReceiver(receiver)
-            // const audio = new Audio(beepSound);
-            // audio.play();
-            // setIsSearching(false)
+            const audio = new Audio(beepSound);
+            audio.play();
+            setIsSearching(false)
         })
 
         socket.on("chat-close", () => {

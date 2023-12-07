@@ -3,10 +3,12 @@ import './App.css';
 import Header from './Layout/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Chat from './pages/Chat';
+import Socket from './Socket';
 
 function App() {
   return (
     <>
+      <Socket />
       <Header />
       <BrowserRouter>
         <Routes>

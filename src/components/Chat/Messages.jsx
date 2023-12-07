@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useChat } from '../../contextApi/ChatContext'
 import { socket } from '../../Socket'
-// import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
 
 const Messages = () => {
     const { userId, isSearching, setIsSearching, receiver, messages, setMessages, isTyping } = useChat()
@@ -18,30 +18,30 @@ const Messages = () => {
         };
     }
 
-    // const takeScreenshot = () => {
-    //     const element = document.getElementById('savedchat'); // Replace 'elementToCapture' with the ID of the element you want to capture
+    const takeScreenshot = () => {
+        const element = document.getElementById('savedchat'); // Replace 'elementToCapture' with the ID of the element you want to capture
 
-    //     html2canvas(element).then((canvas) => {
-    //         const screenshot = canvas.toDataURL('image/png');
-    //         const downloadLink = document.createElement('a');
+        html2canvas(element).then((canvas) => {
+            const screenshot = canvas.toDataURL('image/png');
+            const downloadLink = document.createElement('a');
 
-    //         // Set the href attribute with the data URL
-    //         downloadLink.href = screenshot;
+            // Set the href attribute with the data URL
+            downloadLink.href = screenshot;
 
-    //         // Set the download attribute with a desired file name
-    //         downloadLink.download = 'screenshot.png';
+            // Set the download attribute with a desired file name
+            downloadLink.download = 'screenshot.png';
 
-    //         // Append the link to the body
-    //         document.body.appendChild(downloadLink);
+            // Append the link to the body
+            document.body.appendChild(downloadLink);
 
-    //         // Trigger a click on the link to initiate the download
-    //         downloadLink.click();
+            // Trigger a click on the link to initiate the download
+            downloadLink.click();
 
-    //         // Remove the link from the body after download
-    //         document.body.removeChild(downloadLink);
-    //         // Now you can save or display the screenshot as needed
-    //     });
-    // };
+            // Remove the link from the body after download
+            document.body.removeChild(downloadLink);
+            // Now you can save or display the screenshot as needed
+        });
+    };
 
     const messagesRef = useRef()
 
