@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { io } from 'socket.io-client';
-import { useChat } from './context/ChatContext';
 import { v4 as uuidv4 } from 'uuid';
+import { useChat } from './contextApi/ChatContext';
 // import beepSound from "./assets/ping-82822.mp3"
 
 const URL = process.env.REACT_APP_BASE_URL
