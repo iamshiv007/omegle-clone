@@ -7,6 +7,7 @@ const Messages = () => {
     const { userId, isSearching, setIsSearching, receiver, messages, setMessages, isTyping } = useChat()
 
     const newChat = () => {
+        setIsSearching(true)
         setMessages([])
         socket.emit("pairing-user", userId, (error) => {
             if (error) {
@@ -83,7 +84,7 @@ const Messages = () => {
                     <div className='disconnectText2' style={{ display: 'flex', gap: "5px" }}>
                         <button onClick={newChat}>Start a new conversation</button>
                         <p>or</p>
-                        <p style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}>save this log</p>
+                        <p style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}  onClick={takeScreenshot}>save this log</p>
                         <p>or</p>
                         <p style={{ color: "blue", textDecoration: "underline" }}>send us feedback</p>
                     </div>

@@ -145,7 +145,7 @@
     border: 1px solid #DE6969;
     padding: 8px 6px;
     border-radius: 8px;
-    background: linear-gradient(rgb(247, 206, 206) 5%, #DE6969 15%, white 25%);
+    background: linear-gradient(rgb(252, 236, 236) 10%, #DE6969 15%, white 20%);
     margin-top: 0;
   }
 
@@ -153,7 +153,7 @@
     border: 1px solid #7F7ADE;
     padding: 8px 6px;
     border-radius: 8px;
-    background: linear-gradient(rgb(202, 202, 243) 5%, #7F7ADE 15%, white 25%);
+    background: linear-gradient(rgb(237, 237, 253) 10%, #7F7ADE 15%, white 20%);
     margin-top: 0;
   }
 
