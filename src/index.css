@@ -3,6 +3,10 @@
   font-family: 'Arial', sans-serif;
 }
 
-a{
+body {
+  background: #fff7ee;
+}
+
+a {
   text-decoration: none;
 }

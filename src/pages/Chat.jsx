@@ -14,7 +14,7 @@ const Chat = () => {
                     <title>Omegle: Connected to stranger</title>
                 </Helmet> :
                 <Helmet>
-                    <title>Omegle: Talk to strangers</title>
+                    <title>Omegle: Talk to strangers!</title>
                 </Helmet>
             }
             <Messages />

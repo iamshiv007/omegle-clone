@@ -6,13 +6,14 @@ const Home = () => {
     const [isTermsModal, setIsTermsModal] = useState(false);
 
     return (
+        // desktop
         <>
             <div className='homeDesktop' style={{
-                width: "680px",
-                padding: "10px", margin: "10px auto", border: "1px solid #ECE8E8",
+                width: "720px",
+                padding: "10px", margin: "15px auto", border: "1px solid #CCC",
                 borderRadius: "10px", overflow: "hidden"
             }}>
-                <p style={{ fontSize: "14px", textAlign: "center" }}>You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.
+                <p style={{ fontSize: "14px", textAlign: "center", fontWeight: "600" }}>You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.
                 </p>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <img src={usaFlag} alt="USA Flag" style={{ height: "170px", width: "350px", margin: "20px 0", background: "rgba(0, 0, 1, 0.01)", objectFit: "cover" }} />
@@ -43,30 +44,32 @@ const Home = () => {
                 <div style={{ marginBottom: "10px", display: 'flex', justifyContent: "space-between" }}>
                     <div>
                         <p style={{ marginBottom: "5px", textAlign: "center", fontSize: "18px" }}>What do you wanna talk about?</p>
-                        <input type='text' placeholder='Add your interests(optional)' style={{ textAlign: "center", fontSize: "16px", padding: "14px", width: "330px", border: "1px solid #ECE8E8", borderRadius: "2px", cursor: "not-allowed" }} disabled />
+                        <input type='text' placeholder='Add your interests(optional)' style={{ textAlign: "center", fontSize: "19px", padding: "14px", width: "330px", border: "1px solid #CCC", borderRadius: "2px", cursor: "not-allowed" }} disabled />
                     </div>
 
                     <div>
                         <p style={{ marginBottom: "5px", textAlign: "center", fontSize: "18px" }}>Start Chating:</p>
                         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                            <button className='textBtn' style={{ fontSize: "20px", color: "white", fontWeight: "500", width: "120px", padding: "14px", border: "1px solid #ECE8E8", borderRadius: "4px" }} onClick={() => setIsTermsModal(true)}>Text</button>
+                            <button className='textBtn' style={{ fontSize: "20px", color: "white", fontWeight: "500", width: "120px", padding: "14px", border: "none", borderRadius: "4px" }} onClick={() => setIsTermsModal(true)}>Text</button>
                             <p>or</p>
-                            <button className='videoBtn' style={{ fontSize: "20px", color: "white", fontWeight: "500", width: "120px", padding: "14px", border: "1px solid #ECE8E8", borderRadius: "4px", cursor: "not-allowed" }} disabled={true}>Video</button>
+                            <button className='videoBtn' style={{ fontSize: "20px", color: "white", fontWeight: "500", width: "120px", padding: "14px", border: "none", borderRadius: "4px", cursor: "not-allowed" }} disabled={true}>Video</button>
                         </div>
                     </div>
                 </div>
 
-                <div style={{ padding: "5px", width: "330px", border: "1px solid #ECE8E8", display: "flex", justifyContent: "space-around" }}>
-                    <p>▶️</p>
+                <div style={{ padding: "8px", width: "330px", background: "rgb(238, 238, 238", border: "1px solid rgb(204, 204, 204)", borderRadius: "8px", display: "flex", justifyContent: "space-around", position: "relative" }}>
+                    <p style={{ position: "absolute", left: "20px", top: "2px" }}>▶️</p>
                     <p><strong>College student</strong> chat</p>
                 </div>
             </div >
 
+
+            {/* mobile */}
             <div className='mobileHome' style={{ marginTop: "16px", border: "1px solid #ECE8E8", borderRadius: "10px", boxShadow: "0px 0px -6px black" }}>
-                <div style={{ padding: "10px" }}>
-                    <p style={{ fontSize: "15px", textAlign: "center", lineHeight: "22px", padding: "8px 0" }}>Mobile video chat is an experimental new feature. Video is monitored, so keep it clean!
+                <div>
+                    <p style={{ textAlign: "center", lineHeight: "22px", padding: "8px 0" }}>Mobile video chat is an experimental new feature. Video is monitored, so keep it clean!
                     </p>
-                    <p style={{ fontSize: "15px", textAlign: "center", lineHeight: "22px", padding: "8px 0" }}>Go to <span style={{ color: "blue", fontSize: "12px", textDecoration: "underline" }}>an adult site</span> if that's what you want, and you are 18 or older.</p>
+                    <p style={{ textAlign: "center", lineHeight: "22px", padding: "8px 0" }}>Go to <span style={{ color: "blue", fontSize: "12px", textDecoration: "underline" }}>an adult site</span> if that's what you want, and you are 18 or older.</p>
                     <div style={{ padding: "8px 0", display: "flex", justifyContent: "center" }}>
                         <button className='textBtn' style={{ fontSize: "20px", color: "white", fontWeight: "500", padding: "10px 25px", border: "1px solid #ECE8E8", borderRadius: "4px" }} onClick={() => setIsTermsModal(true)}>Start a chat</button>
                         <button className='videoBtn' style={{ fontSize: "20px", color: "white", fontWeight: "500", padding: "10px 25px", border: "1px solid #ECE8E8", borderRadius: "4px", cursor: "not-allowed" }}>video</button>
@@ -74,16 +77,16 @@ const Home = () => {
                 </div>
 
                 <div>
-                    <p style={{ fontSize: "15px", textAlign: "center", paddingTop: "10px", paddingBottom: "5px" }}>Meet strangers with your interests!</p>
+                    <p style={{ textAlign: "center", paddingTop: "10px", paddingBottom: "5px" }}>Meet strangers with your interests!</p>
                     <input type="text" placeholder='Add your interests (optional)' style={{ fontSize: "15px", width: "98%", padding: "8px 4px", border: "1px solid #dddada", borderRadius: "5px" }} />
                 </div>
 
-                <div style={{ padding: "4px", marginTop: "10px", background: "#dddada", display: "flex", justifyContent: "center", border: "1px solid #c5c4c4", borderRadius: "5px" }}>
-                    <p style={{ position: "relative", left: "-40px", top:"-5px" }}>▶️</p>
+                <div style={{ padding: "4px", marginTop: "10px", background: "#dddada", display: "flex", justifyContent: "center", border: "1px solid #ECE8E8", borderRadius: "5px" }}>
+                    <p style={{ position: "relative", left: "-40px", top: "-5px" }}>▶️</p>
                     <p><strong>College student</strong> chat</p>
                 </div>
 
-                <p style={{fontSize:"15px", padding:"10px", marginTop:"10px"}}>
+                <p style={{ padding: "10px", marginTop: "10px" }}>
                     Omegle (omegul) is a great way to meet new friends, even while practicing social distancing. When you use Omegle, you are paired randomly with another person to talk one-on-one. If you prefer, you can add your interests and you'll be randomly paired with someone who selected
                     some of the same interests
                 </p>

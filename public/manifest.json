@@ -2,7 +2,7 @@
   "name": "omegle",
   "short_name": "omegle",
   "theme_color": "#1976d2",
-  "background_color": "#FFF7EE",
+  "background_color": "#fff7ee",
   "display": "standalone",
   "scope": "./",
   "start_url": "/",

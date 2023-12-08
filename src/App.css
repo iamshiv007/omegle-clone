@@ -1,19 +1,20 @@
-.stopBtn {
-  border: 1px solid #b3aeae
+.header {
+  box-shadow: 0 0.25em 0.75em #CCC;
+  -moz-box-shadow: 0 .25em .75em #CCC;
+  -webkit-box-shadow: 0 0.25em 0.75em #CCC;
 }
 
+.stopBtn {
+  border: 1px solid #dbd7d7
+}
+/* 80bfff */
+/* 0180fe */
 .newBtn,
 .sendBtn,
 .textBtn {
-  background: #83ABF7;
+  background: linear-gradient(to bottom, #80bfff 25%, #5cadff 50%, #0180fe 100%);
   cursor: pointer;
   color: white;
-}
-
-.newBtn:hover,
-.sendBtn:hover,
-.textBtn:hover {
-  background: #699af7
 }
 
 .newBtn:disabled,
@@ -21,6 +22,14 @@
   background: white;
   color: #d7d7d7;
   cursor: default;
+}
+
+.homeDesktop {
+  background: white;
+  border-radius: 0.5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: 0.5em;
+  box-shadow: inset 0 0 0.5em #BBB;
 }
 
 .headerRight {
@@ -41,21 +50,12 @@
 }
 
 .videoBtn {
-  background: #9bbbf5
+  background: rgb(206, 205, 205)
 }
 
 .strangerBox,
 .youBox {
   margin-top: 12px;
-}
-
-.confirmBtn:hover {
-  color: blue;
-  /* border: 1px solid blue; */
-}
-
-.confirmBtn:disabled {
-  color: rgb(180, 179, 179);
 }
 
 .termsBox {

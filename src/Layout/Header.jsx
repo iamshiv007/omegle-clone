@@ -10,18 +10,18 @@ const Header = () => {
     const { onlineUsers } = useChat()
 
     return (
-        <div style={{ padding: "10px 30px", display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "2px 2px 2px #e4e3e3" }}>
+        <div className="header" style={{ padding: "10px 30px", background: "white", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className='logoWrapper' style={{ display: "flex", alignItems: "center", gap: "50px" }}>
                 <img src={OmegleLogo} alt="Omegle Logo" style={{ height: "50px" }} />
 
-                <p className='rotatedText' style={{ fontSize: "22px", fontWeight: "700", rotate: "-6deg" }}>Talk to strangers!</p>
+                <p className='rotatedText' style={{ fontSize: "27px", fontWeight: "700", rotate: "-4deg" }}>Talk to strangers!</p>
             </div>
 
             <div className="headerRight" style={{ flexDirection: "column", alignItems: "end" }}>
                 <div style={{ display: "flex", gap: "10px" }}>
-                    <button style={{ color: "white", background: "#4A549A", border: "none", borderRadius: "2px", display: "flex", gap: "5px", alignItems: "center" }}><FaFacebookF />
+                    <button style={{ fontSize: "10px", color: "white", background: "#4A549A", border: "none", borderRadius: "2px", display: "flex", gap: "5px", alignItems: "center" }}><FaFacebookF />
                         Share</button>
-                    <button style={{ color: "white", background: "#728EC5", border: "none", borderRadius: "2px", display: "flex", gap: "5px", alignItems: "center" }}><FaTwitter />
+                    <button style={{ fontSize: "10px", color: "white", background: "#728EC5", border: "none", borderRadius: "2px", display: "flex", gap: "5px", alignItems: "center" }}><FaTwitter />
                         Tweet</button>
                     <button style={{ padding: "2px 10px", border: "1px solid gray", borderRadius: "2px", display: "flex", alignItems: "center", gap: "5px" }}>
                         <FcGoogle />
