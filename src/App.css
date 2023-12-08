@@ -58,27 +58,12 @@
   color: rgb(180, 179, 179);
 }
 
-.home {
-  width: 50%;
-  margin: 10px auto;
-  border: 1px solid #ECE8E8;
-}
-
-.homeBtnWrapper {
-  display: flex;
-}
-
 .termsBox {
   width: 50%;
 }
 
-.homeImage {
-  height: 170px;
-  width: 400px;
-}
-
-.homeInput {
-  width: 350px;
+.mobileHome {
+  display: none;
 }
 
 @media (max-width:600px) {
@@ -185,28 +170,15 @@
     margin: 0 auto;
   }
 
-  .home {
-    width: 90%;
-    margin: 0px auto;
-    border: none;
-  }
-
-  .homeBtnWrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
   .termsBox {
     width: 100%;
   }
 
-  .homeImage {
-    height: 150px;
-    width: 300px;
+  .homeDesktop {
+    display: none
   }
 
-  .homeInputWrapper {
-    width: 300px;
+  .mobileHome {
+    display: block;
   }
 }
