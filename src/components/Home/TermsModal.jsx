@@ -19,18 +19,18 @@ const TermsModal = ({ setIsTermsModal }) => {
                 </div>
                 <div style={{ display: "flex", gap: "10px" }}>
                     <span>
-                        <input type="checkbox" style={{ margin: "0px 10px 10px 0px", width: "25px", height: "25px" }} checked={check1} onChange={() => setCheck1(!check1)} />
+                        <input className='modalInput' type="checkbox" checked={check1} onChange={() => setCheck1(!check1)} />
                     </span>
-                    <span style={{ fontSize: "15px", lineHeight: "22px" }}>
+                    <span className='modalText' style={{ fontSize: "15px" }}>
                         <strong>
                             OUR AGE RESTRICTIONS HAVE CHANGED.YOU MUST BE 18 OR OLDER TO USE OMEGLE.</strong>Persons under the age of 18 <strong>may not</strong> use Omegle.See our updated <span style={{ color: 'blue', textDecoration: "underline" }}>Terms of Service</span> for more info.<strong>By checking the box you acknowledge and represent that you comply with these age restrictions.</strong>
                     </span>
                 </div>
                 <div style={{ marginTop: "15px", display: "flex", gap: "10px" }}>
                     <span>
-                        <input type="checkbox" style={{ width: "50px", height: "50px", margin: "0px 10px 0 0", width: "25px", height: "25px" }} checked={check2} onChange={() => setcheck2(!check2)} />
+                        <input className='modalInput' type="checkbox" checked={check2} onChange={() => setcheck2(!check2)} />
                     </span>
-                    <span style={{ fontSize: "15px", lineHeight: "22px" }}>By checking the box you acknowledge that you have reviewed and agree to be bound by Omegle's <span style={{ color: 'blue', textDecoration: "underline" }}>Terms of Service, Privacy Policy,</span> and <span style={{ color: 'blue', textDecoration: "underline" }}>Community Guidelines.</span></span>
+                    <span className='modalText' style={{ fontSize: "15px" }}>By checking the box you acknowledge that you have reviewed and agree to be bound by Omegle's <span style={{ color: 'blue', textDecoration: "underline" }}>Terms of Service, Privacy Policy,</span> and <span style={{ color: 'blue', textDecoration: "underline" }}>Community Guidelines.</span></span>
                 </div>
                 <div style={{ marginTop: "20px", display: "flex", flexDirection: "row-reverse" }}>
                     <button className='confirmBtn' style={{ fontSize: "25px" }} onClick={navigateToChat} disabled={!check1 || !check2}>Confirm & continue</button>

@@ -7,6 +7,7 @@
 .stopBtn {
   border: 1px solid #dbd7d7
 }
+
 /* 80bfff */
 /* 0180fe */
 .newBtn,
@@ -24,7 +25,8 @@
   cursor: default;
 }
 
-.homeDesktop {
+.homeDesktop,
+.mobileHome {
   background: white;
   border-radius: 0.5em;
   -moz-border-radius: .5em;
@@ -64,6 +66,15 @@
 
 .mobileHome {
   display: none;
+}
+
+.modalText {
+  line-height: 22px
+}
+
+.modalInput {
+  width: 25px;
+  height: 25px
 }
 
 @media (max-width:600px) {
@@ -171,7 +182,7 @@
   }
 
   .termsBox {
-    width: 100%;
+    width: 85%;
   }
 
   .homeDesktop {
@@ -180,5 +191,14 @@
 
   .mobileHome {
     display: block;
+  }
+
+  .modalText {
+    line-height: 20px
+  }
+
+  .modalInput {
+    width: 18px;
+    height: 18px
   }
 }

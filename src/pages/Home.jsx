@@ -57,7 +57,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div style={{ padding: "8px", width: "330px", background: "rgb(238, 238, 238", border: "1px solid rgb(204, 204, 204)", borderRadius: "8px", display: "flex", justifyContent: "space-around", position: "relative" }}>
+                <div style={{ padding: "8px", width: "330px", background: "rgb(238, 238, 238)", border: "1px solid rgb(204, 204, 204)", borderRadius: "8px", display: "flex", justifyContent: "space-around", position: "relative" }}>
                     <p style={{ position: "absolute", left: "20px", top: "2px" }}>▶️</p>
                     <p><strong>College student</strong> chat</p>
                 </div>
@@ -65,11 +65,11 @@ const Home = () => {
 
 
             {/* mobile */}
-            <div className='mobileHome' style={{ marginTop: "16px", border: "1px solid #ECE8E8", borderRadius: "10px", boxShadow: "0px 0px -6px black" }}>
+            <div className='mobileHome' style={{ marginTop: "16px", border: "1px solid #CCC" }}>
                 <div>
                     <p style={{ textAlign: "center", lineHeight: "22px", padding: "8px 0" }}>Mobile video chat is an experimental new feature. Video is monitored, so keep it clean!
                     </p>
-                    <p style={{ textAlign: "center", lineHeight: "22px", padding: "8px 0" }}>Go to <span style={{ color: "blue", fontSize: "12px", textDecoration: "underline" }}>an adult site</span> if that's what you want, and you are 18 or older.</p>
+                    <p style={{ textAlign: "center", lineHeight: "22px", padding: "8px 0" }}>Go to <span style={{ color: "blue", textDecoration: "underline" }}>an adult site</span> if that's what you want, and you are 18 or older.</p>
                     <div style={{ padding: "8px 0", display: "flex", justifyContent: "center" }}>
                         <button className='textBtn' style={{ fontSize: "20px", color: "white", fontWeight: "500", padding: "10px 25px", border: "1px solid #ECE8E8", borderRadius: "4px" }} onClick={() => setIsTermsModal(true)}>Start a chat</button>
                         <button className='videoBtn' style={{ fontSize: "20px", color: "white", fontWeight: "500", padding: "10px 25px", border: "1px solid #ECE8E8", borderRadius: "4px", cursor: "not-allowed" }}>video</button>
@@ -81,12 +81,12 @@ const Home = () => {
                     <input type="text" placeholder='Add your interests (optional)' style={{ fontSize: "15px", width: "98%", padding: "8px 4px", border: "1px solid #dddada", borderRadius: "5px" }} />
                 </div>
 
-                <div style={{ padding: "4px", marginTop: "10px", background: "#dddada", display: "flex", justifyContent: "center", border: "1px solid #ECE8E8", borderRadius: "5px" }}>
-                    <p style={{ position: "relative", left: "-40px", top: "-5px" }}>▶️</p>
+                <div style={{ padding: "4px", marginTop: "10px", background: "rgb(238, 238, 238)", display: "flex", justifyContent: "center", border: "1px solid rgb(204, 204, 204)", borderRadius: "5px", position: "relative" }}>
+                    <p style={{ position: "absolute", left: "10px", top: "0px" }}>►</p>
                     <p><strong>College student</strong> chat</p>
                 </div>
 
-                <p style={{ padding: "10px", marginTop: "10px" }}>
+                <p style={{ lineHeight: "22px", padding: "10px", marginTop: "10px" }}>
                     Omegle (omegul) is a great way to meet new friends, even while practicing social distancing. When you use Omegle, you are paired randomly with another person to talk one-on-one. If you prefer, you can add your interests and you'll be randomly paired with someone who selected
                     some of the same interests
                 </p>
