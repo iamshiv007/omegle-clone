@@ -4,7 +4,7 @@ import { socket } from '../../Socket'
 import html2canvas from 'html2canvas';
 
 const Messages = () => {
-    const { userId, isSearching, setIsSearching, receiver, messages, setMessages, isTyping } = useChat()
+    const { userId, isSearching, setIsSearching, receiver, messages, setMessages, isTyping, message } = useChat()
 
     const newChat = () => {
         setIsSearching(true)
@@ -75,7 +75,7 @@ const Messages = () => {
             ))
             }
 
-            {receiver && isTyping && <p style={{ marginTop: "5px" }}>Stranger is typing...</p>}
+            {isTyping && <p style={{ marginTop: "5px" }}>Stranger is typing...</p>}
 
             {isSearching && <p className='loadingText'>Looking for someone you can chat with...</p>}
             {!isSearching && !receiver && receiver === "" &&
@@ -84,7 +84,7 @@ const Messages = () => {
                     <div className='disconnectText2' style={{ display: 'flex', gap: "5px" }}>
                         <button onClick={newChat}>Start a new conversation</button>
                         <p>or</p>
-                        <p style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}  onClick={takeScreenshot}>save this log</p>
+                        <p style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }} onClick={takeScreenshot}>save this log</p>
                         <p>or</p>
                         <p style={{ color: "blue", textDecoration: "underline" }}>send us feedback</p>
                     </div>

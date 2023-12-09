@@ -3,9 +3,7 @@ import { useChat } from '../../contextApi/ChatContext';
 import { socket } from '../../Socket';
 
 const MessageInput = () => {
-    const [message, setMessage] = useState("");
-    const [isSending, setIsSending] = useState(false);
-    const { userId, isSearching, setIsSearching, receiver, setReceiver, setMessages, setIsTyping } = useChat()
+    const { userId, isSearching, setIsSearching, receiver, setReceiver, setMessages, isSending, setIsSending, message, setMessage, setIsTyping } = useChat()
 
     const newChat = () => {
         setIsSearching(true)
@@ -21,9 +19,8 @@ const MessageInput = () => {
     }
 
     const sendMessage = () => {
-        setIsSending(true)
-        setIsTyping(false)
         if (message === "") return
+        setIsSending(true)
         socket.emit("send-message", receiver, message, () => {
             setMessage("")
         })
@@ -34,6 +31,8 @@ const MessageInput = () => {
     const disconnectChat = () => {
         socket.emit("chat-close", receiver, () => {
             setReceiver("")
+            setIsTyping(false)
+            setMessage("")
         })
     }
 
@@ -47,7 +46,7 @@ const MessageInput = () => {
         if (e.target.value !== "") {
             socket.emit("typing", receiver)
         } else {
-            setIsTyping(false)
+            socket.emit("typing stop", receiver)
         }
     }
 

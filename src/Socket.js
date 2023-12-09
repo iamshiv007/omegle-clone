@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { io } from 'socket.io-client';
 import { v4 as uuidv4 } from 'uuid';
 import { useChat } from './contextApi/ChatContext';
-import beepSound from "./assets/ping-82822.mp3"
+// import beepSound from "./assets/ping-82822.mp3"
 
 const URL = process.env.REACT_APP_BASE_URL
 
@@ -12,7 +12,7 @@ export const socket = io(URL, {
 });
 
 const Socket = () => {
-    const { setUserId, setIsConnected, setMessages, setOnlineUsers, receiver, setReceiver, setIsSearching, setIsTyping } = useChat()
+    const { setUserId, setIsConnected, setMessages, setOnlineUsers, receiver, setReceiver, setIsSearching, setIsTyping, setMessage } = useChat()
 
     useEffect(() => {
         socket.connect();
@@ -53,8 +53,9 @@ const Socket = () => {
         socket.on("get-online-users", (users) => {
             setOnlineUsers(users);
             if (receiver !== undefined && !users.find((user) => user.userId === receiver)) {
-                setReceiver("")
                 setIsTyping(false)
+                setMessage("")
+                setReceiver("")
             }
         });
 
@@ -68,17 +69,23 @@ const Socket = () => {
 
         socket.on("user-paired", (receiver) => {
             setReceiver(receiver)
-            const audio = new Audio(beepSound);
-            audio.play();
+            // const audio = new Audio(beepSound);
+            // audio.play();
             setIsSearching(false)
         })
 
         socket.on("chat-close", () => {
             setReceiver("")
+            setMessage("")
+            setIsTyping(false)
         })
 
         socket.on("typing", () => {
             setIsTyping(true)
+        })
+
+        socket.on("typing stop", () => {
+            setIsTyping(false)
         })
 
         return () => {

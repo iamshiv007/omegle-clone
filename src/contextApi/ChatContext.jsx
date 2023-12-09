@@ -10,6 +10,8 @@ const ChatContextProvider = ({ children }) => {
     const [isConnected, setIsConnected] = useState(false);
     const [receiver, setReceiver] = useState();
     const [isTyping, setIsTyping] = useState(false);
+    const [isSending, setIsSending] = useState(false);
+    const [message, setMessage] = useState("");
 
     return (
         <>
@@ -28,7 +30,11 @@ const ChatContextProvider = ({ children }) => {
                     isSearching,
                     setIsSearching,
                     isTyping,
-                    setIsTyping
+                    setIsTyping,
+                    isSending,
+                    setIsSending,
+                    message,
+                    setMessage
                 }}
             >
                 {children}

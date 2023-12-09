@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import TermsModal from '../components/Home/TermsModal';
-import usaFlag from "../assets/usaFlag.jpg"
+import usaFlag from "../assets/usaFlag.jpg";
 
 const Home = () => {
     const [isTermsModal, setIsTermsModal] = useState(false);
@@ -78,7 +78,7 @@ const Home = () => {
 
                 <div>
                     <p style={{ textAlign: "center", paddingTop: "10px", paddingBottom: "5px" }}>Meet strangers with your interests!</p>
-                    <input type="text" placeholder='Add your interests (optional)' style={{ fontSize: "15px", width: "98%", padding: "8px 4px", border: "1px solid #dddada", borderRadius: "5px" }} />
+                    <input type="text" placeholder='Add your interests (optional)' style={{ fontSize: "15px", width: "98%", padding: "8px 4px", border: "1px solid #dddada", borderRadius: "5px" }} disabled />
                 </div>
 
                 <div style={{ padding: "4px", marginTop: "10px", background: "rgb(238, 238, 238)", display: "flex", justifyContent: "center", border: "1px solid rgb(204, 204, 204)", borderRadius: "5px", position: "relative" }}>
