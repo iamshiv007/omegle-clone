@@ -9,9 +9,7 @@ const MessageInput = () => {
         setIsSearching(true)
         setMessages([])
         socket.emit("pairing-user", userId, (error) => {
-            if (error) {
-                return alert(error);
-            }
+            return
         })
         return () => {
             socket.off("pairing-user");
@@ -19,6 +17,7 @@ const MessageInput = () => {
     }
 
     const sendMessage = () => {
+        if (isSending) return
         if (message === "") return
         setIsSending(true)
         socket.emit("send-message", receiver, message, () => {
@@ -69,7 +68,7 @@ const MessageInput = () => {
             <input type='text' placeholder='Type  your message...' className='inputBox' style={{ fontSize: "18px", padding: "16px", width: "80%", borderRadius: "2px" }} onChange={(e) => {
                 setMessage(e.target.value)
                 typingHandle(e)
-            }} value={message} onKeyDown={(e) => handleKeyPress(e)} disabled={!receiver || isSending} />
+            }} value={message} onKeyDown={(e) => handleKeyPress(e)} disabled={!receiver} />
             <button className='sendBtn' style={{ fontSize: '20px', width: "7%", padding: "16px", border: "1px solid #b3aeae", borderRadius: "2px" }} onClick={sendMessage}
                 disabled={!receiver || isSending}>
                 Send
