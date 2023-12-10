@@ -12,7 +12,7 @@ export const socket = io(URL, {
 });
 
 const Socket = () => {
-    const { setUserId, setIsConnected, setMessages, setOnlineUsers, receiver, setReceiver, setIsSearching, setIsTyping, setMessage } = useChat()
+    const { setUserId, setIsConnected, setMessages, setOnlineUsers, receiver, setReceiver, setIsSearching, setIsTyping, setMessage, setIsSending } = useChat()
 
     useEffect(() => {
         socket.connect();
@@ -65,6 +65,14 @@ const Socket = () => {
                 { stranger: message },
             ]);
             setIsTyping(false)
+        });
+
+        socket.on("receive-message", (message) => {
+            setMessages((previous) => [
+                ...previous,
+                { you: message },
+            ]);
+            setIsSending(false)
         });
 
         socket.on("user-paired", (receiver) => {

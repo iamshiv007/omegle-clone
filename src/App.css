@@ -77,7 +77,33 @@
   height: 25px
 }
 
+.loadingTextMobile,
+.disconnectedTextMobile,
+.disconnectText2Mobile {
+  display: none;
+}
+
+.disconnectText2Desktop {
+  display: flex
+}
+
 @media (max-width:600px) {
+
+  .loadingTextDesktop,
+  .disconnectedTextDesktop,
+  .disconnectText2Desktop {
+    display: none;
+  }
+
+  .loadingTextMobile,
+  .disconnectedTextMobile {
+    display: block;
+  }
+
+  .disconnectText2Mobile {
+    display: flex;
+  }
+
   .stopBtn {
     border-top: 1px solid #b3aeae;
     border-right: 1px solid #b3aeae;
@@ -171,6 +197,7 @@
 
   .disconnectText2 {
     justify-content: center;
+    align-items: center;
   }
 
   .welcomeText {

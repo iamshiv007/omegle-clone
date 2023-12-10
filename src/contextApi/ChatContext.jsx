@@ -4,7 +4,7 @@ const ChatContext = createContext();
 
 const ChatContextProvider = ({ children }) => {
     const [userId, setUserId] = useState();
-    const [isSearching, setIsSearching] = useState(false);
+    const [isSearching, setIsSearching] = useState(true);
     const [onlineUsers, setOnlineUsers] = useState([]);
     const [messages, setMessages] = useState([]);
     const [isConnected, setIsConnected] = useState(false);

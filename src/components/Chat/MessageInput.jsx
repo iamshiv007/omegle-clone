@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { useChat } from '../../contextApi/ChatContext';
 import { socket } from '../../Socket';
 
@@ -24,16 +24,18 @@ const MessageInput = () => {
         socket.emit("send-message", receiver, message, () => {
             setMessage("")
         })
-        setMessages((prev) => [...prev, { you: message }])
-        setIsSending(false)
     }
 
     const disconnectChat = () => {
-        socket.emit("chat-close", receiver, () => {
-            setReceiver("")
-            setIsTyping(false)
-            setMessage("")
-        })
+        if (receiver) {
+            socket.emit("chat-close", receiver, () => {
+                setReceiver("")
+                setIsTyping(false)
+                setMessage("")
+            })
+        } else {
+            setIsSearching(false)
+        }
     }
 
     const handleKeyPress = (e) => {
@@ -50,9 +52,13 @@ const MessageInput = () => {
         }
     }
 
+    useEffect(() => {
+        newChat()
+    }, []);
+
     return (
         <div className='messageInputWrapper' style={{ display: 'flex', gap: "5px" }}>
-            {receiver ?
+            {receiver || isSearching ?
                 <button className="stopBtn" style={{ fontSize: "20px", fontWeight: "500", minWidth: "fit-content", width: "7%", padding: "16px", borderRadius: "2px", cursor: "pointer" }} onClick={disconnectChat}>
                     Stop
                 </button> :

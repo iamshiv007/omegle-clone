@@ -62,7 +62,7 @@ const Messages = () => {
                 </>
             )}
 
-            {messages.length === 0 && !isTyping && receiver && <p className='connectedText'>You’re now chatting with a random stranger. Say Stand WITH THE CHINESE PEOPLE AGAINST THE CCP!</p>}
+            {receiver && <p className='connectedText'>You’re now chatting with a random stranger. Say Stand WITH THE CHINESE PEOPLE AGAINST THE CCP!</p>}
             {messages.map((message, index) => (
                 <div key={index} className={message?.stranger ? "strangerWrapper" : "youWrapper"}>
                     <div className={message?.stranger ? "strangerBox" : "youBox"} style={{ fontSize: "18px", marginBottom: "10px", display: "flex", gap: "5px" }}>
@@ -77,11 +77,18 @@ const Messages = () => {
 
             {isTyping && <p style={{ marginTop: "5px" }}>Stranger is typing...</p>}
 
-            {isSearching && <p className='loadingText'>Looking for someone you can chat with...</p>}
+            {isSearching && <p className='loadingText loadingTextMobile'>Connecting to server...</p>}
+            {isSearching && <p className='loadingText loadingTextDesktop'>Looking for someone you can chat with...</p>}
             {!isSearching && !receiver && receiver === "" &&
                 <>
-                    <p className='disconnectText' style={{ color: 'gray', fontWeight: "500", margin: '15px 0 10px 0' }}>Your conversational partner has disconnected</p>
-                    <div className='disconnectText2' style={{ display: 'flex', gap: "5px" }}>
+                    <p className='disconnectText disconnectedTextMobile' style={{ color: 'gray', fontWeight: "500", margin: '15px 0 10px 0' }}>Stranger has disconnected.</p>
+                    <p className='disconnectText disconnectedTextDesktop' style={{ color: 'gray', fontWeight: "500", margin: '15px 0 10px 0' }}>Your conversational partner has disconnected</p>
+                    <div className='disconnectText2 disconnectText2Mobile' style={{ flexDirection: "column" }}>
+                        <p> <span><input type={"checkbox"} /></span> Find strangers with common interests <span style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}>Settings</span></p>
+                        <p style={{ fontSize:"14px", fontWeight: "600", padding: "10px", marginTop: "8px", background: "#ff8a29", borderRadius: "3px", cursor: "pointer" }} onClick={takeScreenshot}>Great chat? Save the log!</p>
+                    </div>
+
+                    <div className='disconnectText2 disconnectText2Desktop' style={{ gap: "5px" }}>
                         <button onClick={newChat}>Start a new conversation</button>
                         <p>or</p>
                         <p style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }} onClick={takeScreenshot}>save this log</p>
