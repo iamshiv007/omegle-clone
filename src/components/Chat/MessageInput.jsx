@@ -34,6 +34,7 @@ const MessageInput = () => {
                 setMessage("")
             })
         } else {
+            socket.emit("unpairing-user", userId)
             setIsSearching(false)
         }
     }
@@ -91,7 +92,7 @@ const Button = styled.button({
     minWidth: "fit-content",
     width: "7%",
     padding: "16px",
-    border: "1px solid #ECE8E8",
+    border: "1px solid #CCC",
     borderRadius: "2px"
 })
 
