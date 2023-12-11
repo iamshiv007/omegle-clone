@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useChat } from '../../contextApi/ChatContext';
 import { socket } from '../../Socket';
+import styled from 'styled-components';
 
 const MessageInput = () => {
     const { userId, isSearching, setIsSearching, receiver, setReceiver, setMessages, isSending, setIsSending, message, setMessage, setIsTyping } = useChat()
@@ -56,25 +57,55 @@ const MessageInput = () => {
     }, []);
 
     return (
-        <div className='messageInputWrapper' style={{ display: 'flex', gap: "5px" }}>
+        <InputWrapper className='messageInputWrapper'>
             {receiver || isSearching ?
-                <button className="stopBtn" style={{ fontSize: "20px", fontWeight: "500", minWidth: "fit-content", width: "7%", padding: "16px", borderRadius: "2px", cursor: "pointer" }} onClick={disconnectChat}>
+                <Button className="stopBtn" onClick={disconnectChat}>
                     Stop
-                </button> :
-                <button className="newBtn" style={{ fontSize: "20px", fontWeight: "500", minWidth: "fit-content", width: "7%", padding: "16px", border: "1px solid #ECE8E8", borderRadius: "2px" }} onClick={newChat} disabled={isSearching}>
+                </Button> :
+                <Button className="newBtn" onClick={newChat} disabled={isSearching}>
                     New
-                </button>
+                </Button>
             }
-            <input type='text' placeholder='Type  your message...' className='inputBox' style={{ fontSize: "18px", padding: "16px", width: "80%", borderRadius: "2px" }} onChange={(e) => {
+            <Input type='text' placeholder='Type  your message...' className='inputBox' onChange={(e) => {
                 setMessage(e.target.value)
                 typingHandle(e)
             }} value={message} onKeyDown={(e) => handleKeyPress(e)} disabled={!receiver} />
-            <button className='sendBtn' style={{ fontSize: '20px', width: "7%", padding: "16px", border: "1px solid #b3aeae", borderRadius: "2px" }} onClick={sendMessage}
+            <SendButton className='sendBtn' onClick={sendMessage}
                 disabled={!receiver || isSending}>
                 Send
-            </button>
-        </div>
+            </SendButton>
+        </InputWrapper>
     )
 }
 
 export default MessageInput
+
+const InputWrapper = styled.div({
+    display: 'flex',
+    gap: "5px"
+})
+
+const Button = styled.button({
+    fontSize: "20px",
+    fontWeight: "500",
+    minWidth: "fit-content",
+    width: "7%",
+    padding: "16px",
+    border: "1px solid #ECE8E8",
+    borderRadius: "2px"
+})
+
+const Input = styled.input({
+    fontSize: "18px",
+    padding: "16px",
+    width: "80%",
+    borderRadius: "2px"
+})
+
+const SendButton = styled.button({
+    fontSize: '20px',
+    width: "7%",
+    padding: "16px",
+    border: "1px solid #b3aeae",
+    borderRadius: "2px"
+})

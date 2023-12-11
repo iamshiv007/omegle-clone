@@ -4,39 +4,110 @@ import { FaFacebookF, FaTwitter } from "react-icons/fa6"
 import { FcGoogle } from "react-icons/fc"
 import { FaSortDown } from "react-icons/fa"
 import { useChat } from '../contextApi/ChatContext'
+import styled from 'styled-components'
 
 const Header = () => {
 
     const { onlineUsers } = useChat()
 
     return (
-        <div className="header" style={{ padding: "10px 30px", background: "white", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div className='logoWrapper' style={{ display: "flex", alignItems: "center", gap: "50px" }}>
-                <img src={OmegleLogo} alt="Omegle Logo" style={{ height: "50px" }} />
+        <HeaderContainer className="header">
+            <LogoWrapper className='logoWrapper'>
+                <Image src={OmegleLogo} alt="Omegle Logo" />
 
-                <p className='rotatedText' style={{ fontSize: "27px", fontWeight: "700", rotate: "-4deg" }}>Talk to strangers!</p>
-            </div>
+                <HeaderText className='rotatedText'>Talk to strangers!</HeaderText>
+            </LogoWrapper>
 
-            <div className="headerRight" style={{ flexDirection: "column", alignItems: "end" }}>
-                <div style={{ display: "flex", gap: "10px" }}>
-                    <button style={{ fontSize: "10px", color: "white", background: "#4A549A", border: "none", borderRadius: "2px", display: "flex", gap: "5px", alignItems: "center" }}><FaFacebookF />
-                        Share</button>
-                    <button style={{ fontSize: "10px", color: "white", background: "#728EC5", border: "none", borderRadius: "2px", display: "flex", gap: "5px", alignItems: "center" }}><FaTwitter />
-                        Tweet</button>
-                    <button style={{ padding: "2px 10px", border: "1px solid gray", borderRadius: "2px", display: "flex", alignItems: "center", gap: "5px" }}>
+            <HeaderRight className="headerRight">
+                <ButtonsGroup>
+                    <Button style={{ background: "#4A549A" }}><FaFacebookF />
+                        Share</Button>
+                    <Button style={{ background: "#728EC5" }}><FaTwitter />
+                        Tweet</Button>
+                    <SelectButton>
                         <FcGoogle />
                         Choose a language
                         <FaSortDown />
-                    </button>
-                </div>
-                <div style={{ marginTop: "5px", display: 'flex', gap: "5px", alignItems: "center" }}>
-                    <p style={{ fontSize: "25px", color: "#9DB2D7" }}>{onlineUsers.length} +</p>
-                    <p style={{ color: "#b6d1f0" }}>Live users</p>
-                </div>
-            </div>
+                    </SelectButton>
+                </ButtonsGroup>
+                <LiveUsersWrapper>
+                    <LiveUsersNumber>{onlineUsers.length} +</LiveUsersNumber>
+                    <LiveUsersText>Live users</LiveUsersText>
+                </LiveUsersWrapper>
+            </HeaderRight>
 
-        </div >
+        </HeaderContainer >
     )
 }
 
 export default Header
+
+const HeaderContainer = styled.div({
+    padding: "10px 30px",
+    background: "white",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+})
+
+const LogoWrapper = styled.div({
+    display: "flex",
+    alignItems: "center",
+    gap: "50px"
+})
+
+const Image = styled.img({
+    height: "50px"
+})
+
+const HeaderText = styled.p({
+    fontSize: "27px",
+    fontWeight: "700",
+    rotate: "-4deg"
+})
+
+const HeaderRight = styled.div({
+    flexDirection: "column",
+    alignItems: "end"
+})
+
+const ButtonsGroup = styled.div({
+    display: "flex",
+    gap: "10px"
+})
+
+const Button = styled.button({
+    fontSize: "10px",
+    color: "white",
+    background: "#4A549A",
+    border: "none",
+    borderRadius: "2px",
+    display: "flex",
+    gap: "5px",
+    alignItems: "center"
+})
+
+const SelectButton = styled.button({
+    padding: "2px 10px",
+    border: "1px solid gray",
+    borderRadius: "2px",
+    display: "flex",
+    alignItems: "center",
+    gap: "5px"
+})
+
+const LiveUsersWrapper = styled.div({
+    marginTop: "5px",
+    display: 'flex',
+    gap: "5px",
+    alignItems: "center"
+})
+
+const LiveUsersNumber = styled.p({
+    fontSize: "25px",
+    color: "#9DB2D7"
+})
+
+const LiveUsersText = styled.p({
+    color: "#b6d1f0"
+})
