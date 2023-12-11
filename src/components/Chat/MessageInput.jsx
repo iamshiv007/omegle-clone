@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import { useChat } from '../../contextApi/ChatContext';
 import { socket } from '../../Socket';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const MessageInput = () => {
-    const { userId, isSearching, setIsSearching, receiver, setReceiver, setMessages, isSending, setIsSending, message, setMessage, setIsTyping } = useChat()
+    const { userId, onlineUsers, isSearching, setIsSearching, receiver, setReceiver, setMessages, isSending, setIsSending, message, setMessage, setIsTyping } = useChat()
 
     const newChat = () => {
         setIsSearching(true)
@@ -53,8 +54,14 @@ const MessageInput = () => {
         }
     }
 
+    const navigate = useNavigate()
+
     useEffect(() => {
-        newChat()
+        if (userId && onlineUsers.find((user) => user.userId === userId)) {
+            newChat()
+        } else {
+            navigate("/")
+        }
     }, []);
 
     return (
