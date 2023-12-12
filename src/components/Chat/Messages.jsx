@@ -86,7 +86,7 @@ const Messages = () => {
                     <StrangerDisconnected className='disconnectText disconnectedTextMobile'>Stranger has disconnected.</StrangerDisconnected>
                     <StrangerDisconnectedDesktop className='disconnectText disconnectedTextDesktop'>Your conversational partner has disconnected</StrangerDisconnectedDesktop>
                     <SaveLogWrapper className='disconnectText2 disconnectText2Mobile'>
-                        <p><span><input type={"checkbox"} /></span> Find strangers with common interests <Link>Settings</Link></p>
+                        <CommonInterestsText style={{}}><span><input type={"checkbox"} /></span> Find strangers with common interests <Link>Settings</Link></CommonInterestsText>
                         <SaveLogButton onClick={takeScreenshot}>Great chat? Save the log!</SaveLogButton>
                     </SaveLogWrapper>
 
@@ -144,6 +144,10 @@ const StrangerDisconnectedDesktop = styled.p({
 
 const SaveLogWrapper = styled.div({
     flexDirection: "column"
+})
+
+const CommonInterestsText = styled.p({
+    fontSize: "15px", textAlign: "center"
 })
 
 const Link = styled.span({

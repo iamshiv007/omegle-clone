@@ -6,14 +6,24 @@ import { socket } from '../Socket';
 import { useChat } from '../contextApi/ChatContext';
 
 const Home = () => {
-    const { userId, isSearching } = useChat()
+    const { userId, receiver, isSearching, setReceiver, setIsTyping, setMessage, setIsSearching } = useChat()
     const [isTermsModal, setIsTermsModal] = useState(false);
 
     useEffect(() => {
         if (userId && isSearching) {
-            socket.emit("unpairing-user", userId)
+            socket.emit("unpairing-user", userId, () => {
+                setIsSearching(false)
+            })
         }
-    }, [userId, isSearching]);
+
+        if (receiver) {
+            socket.emit("chat-close", receiver, () => {
+                setReceiver("")
+                setIsTyping(false)
+                setMessage("")
+            })
+        }
+    }, [userId, isSearching, receiver]);
 
     return (
         <>

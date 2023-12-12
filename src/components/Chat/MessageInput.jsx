@@ -35,8 +35,9 @@ const MessageInput = () => {
                 setMessage("")
             })
         } else {
-            socket.emit("unpairing-user", userId)
-            setIsSearching(false)
+            socket.emit("unpairing-user", userId, () => {
+                setIsSearching(false)
+            })
         }
     }
 
