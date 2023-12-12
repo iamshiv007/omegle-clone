@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import OmegleLogo from "../assets/Omegle2.png"
 import { FaFacebookF, FaTwitter } from "react-icons/fa6"
 import { FcGoogle } from "react-icons/fc"
@@ -8,7 +8,16 @@ import styled from 'styled-components'
 
 const Header = () => {
 
-    const { onlineUsers } = useChat()
+    const { onlineUsers, receiver, setIsTyping, setMessage, setReceiver } = useChat()
+
+    useEffect(() => {
+        console.log(receiver)
+        if (receiver !== undefined && !onlineUsers.find((user) => user.userId === receiver)) {
+            setIsTyping(false)
+            setMessage("")
+            setReceiver("")
+        }
+    }, [onlineUsers]);
 
     return (
         <HeaderContainer className="header">

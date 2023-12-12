@@ -52,11 +52,6 @@ const Socket = () => {
 
         socket.on("get-online-users", (users) => {
             setOnlineUsers(users);
-            if (receiver !== undefined && !users.find((user) => user.userId === receiver)) {
-                setIsTyping(false)
-                setMessage("")
-                setReceiver("")
-            }
         });
 
         socket.on("send-message", (message) => {

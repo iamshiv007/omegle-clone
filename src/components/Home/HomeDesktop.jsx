@@ -164,7 +164,7 @@ const ButtonsLabel = styled.p({
     fontSize: "18px"
 })
 
-const ButtonsWrapper = styled.p({
+const ButtonsWrapper = styled.div({
     display: "flex",
     gap: "10px",
     alignItems: "center"
