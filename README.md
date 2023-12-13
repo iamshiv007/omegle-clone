@@ -1,5 +1,7 @@
 # Omegle-clone-react [Live](https://omegle-chat.vercel.app)
 
+> **Note:-** Open this application in two browsers (for exa- Chrome and edge) to test and give me feedback [📧softdev.shivraj@gmail.com](https://softdev.shivraj@gmail.com") or you can fix the issue, i am open to merge your contribute.
+
 ## Table of contents
 1. Tech Stack
 2. Demo
@@ -87,4 +89,5 @@ npm install
     npm start
    ```
 🎉 Now you ready to **explore**, **create** and **contribute.🤝**
-    <h3 align="center">🌟 Give a star if you find this project helpful.⭐️</h3>
+
+<h3 align="center">🌟 Give a star if you find this project helpful.⭐️</h3>
