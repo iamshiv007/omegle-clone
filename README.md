@@ -87,4 +87,4 @@ npm install
     npm start
    ```
 🎉 Now you ready to **explore**, **create** and **contribute.🤝**
-    <h1 align="center">🌟 Give a star if you find this project helpful.⭐️</h1>
+    <h3 align="center">🌟 Give a star if you find this project helpful.⭐️</h3>
