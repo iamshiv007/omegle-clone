@@ -1,6 +1,6 @@
 # Omegle-clone-react [Live](https://omegle-chat.vercel.app)
 
-> **Note:-** Open this application in two browsers (for exa- Chrome and edge) to test and give me feedback <a href="mailto:https://softdev.shivraj@gmail.com">📧softdev.shivraj@gmail.com<a> or you can fix the issue, i am open to merge your contribute.
+> **Note:-** Open this application in two browsers (for exa- Chrome and edge) to test and give me feedback <a href="mailto:softdev.shivraj@gmail.com">📧softdev.shivraj@gmail.com<a> or you can fix the issue, i am open to merge your contribute.
 
 ## Table of contents
 1. Tech Stack
